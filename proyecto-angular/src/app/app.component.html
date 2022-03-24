@@ -1,0 +1,20 @@
+<header>
+  <ul>
+    <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">proyectos</a></li>
+    <li id="logo"><a>JNB</a></li>
+    <li><a [routerLink]="['/crear']" [routerLinkActive]="['actived']">crear</a></li>
+    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">contacto</a></li>
+  </ul>
+</header>
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Master en JavaScript de Victor Robles Web &copy;
+</footer>
+
+
+
