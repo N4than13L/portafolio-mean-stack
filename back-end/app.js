@@ -1,29 +1,23 @@
-'use strict'
+"use strict";
 
-var express = require('express')
-var bodyParser = require('body-parser')
-var app = express()
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+var cors = require("cors");
 
-// archivos de  rutas 
+// archivos de  rutas
 
-var proyect_routes = require('./rutes/project')
+var proyect_routes = require("./rutes/project");
 
 // middleweares
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // CORS
-app.use((req, res, next) => {
-     res.header('Access-Control-Allow-Origin', '*')
-     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method')
-     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
-     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')
-     next()
- })
- 
+app.use(cors());
 
 //rutas
-app.use('/api', proyect_routes)
+app.use("/api", proyect_routes);
 
 // exportar
-module.exports = app
+module.exports = app;
